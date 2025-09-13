@@ -12,8 +12,21 @@ function App() {
     <>
          <div style={{ padding: '20px' }}>
       <h1>Recipe Sharing App</h1>
-      <AddRecipeForm />
-      <RecipeList />
+       <nav>
+        <Link to="/">Home</Link>
+      </nav>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <AddRecipeForm />
+              <RecipeList />
+            </>
+          }
+        />
+        <Route path="/recipe/:recipeId" element={<RecipeDetails />} />
+      </Routes>
     </div>
     </>
   )
